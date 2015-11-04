@@ -36,6 +36,8 @@ dependencies {
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
+    compile("com.h2database:h2:1.4.190")
+	
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
