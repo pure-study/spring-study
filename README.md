@@ -2,3 +2,4 @@
 * Gradle
 * Spring-boot
 * H2 Database
+* JaCoCo
