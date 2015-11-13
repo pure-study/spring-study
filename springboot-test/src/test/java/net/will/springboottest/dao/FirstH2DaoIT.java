@@ -5,11 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = TestConfiguration.class)
+@Transactional
 public class FirstH2DaoIT {
-    private FirstH2Dao firstH2Dao;
+    @Autowired
+    private IFirstH2Dao firstH2Dao;
 
     @Ignore("Not ready")
     @Test

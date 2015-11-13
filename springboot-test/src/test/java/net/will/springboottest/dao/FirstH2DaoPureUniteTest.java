@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 public class FirstH2DaoPureUniteTest {
-    private FirstH2Dao firstH2Dao;
+    private IFirstH2Dao firstH2Dao;
     
     private EmbeddedDatabase db;
     
