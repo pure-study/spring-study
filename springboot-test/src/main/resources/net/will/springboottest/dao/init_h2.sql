@@ -1,0 +1,1 @@
+create table first_h2_dao (id int primary key, name varchar(255));
