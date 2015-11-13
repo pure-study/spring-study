@@ -2,29 +2,35 @@ package net.will.springboottest.dao;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
+import javax.sql.DataSource;
+
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
+@Ignore("Manually run this test to avoid multiple times execution on initial SQL script.")
 public class FirstH2DaoPureUniteTest {
-    private IFirstH2Dao firstH2Dao;
+    private static IFirstH2Dao firstH2Dao;
     
-    private EmbeddedDatabase db;
+    private static DataSource ds;
     
-    @Before
-    public void setUp() {
-        db = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
-        firstH2Dao = new FirstH2Dao(new JdbcTemplate(db));
+    @BeforeClass
+    public static void runBeforeClass() {
+        ds = new EmbeddedDatabaseConfiguration().dataSource();
+        firstH2Dao = new FirstH2Dao(new JdbcTemplate(ds));
     }
 
     @Test
-    public void testCreateTableAndInsert() {
-        firstH2Dao.createTable();
-
+    public void testInsert() {
         firstH2Dao.insert();
+        
+        assertNotNull("No exceptions here.");
+    }
+
+    @Test
+    public void testMinorOperationOnDb() {
+        firstH2Dao.minorOperationOnDb();
         
         assertNotNull("No exceptions here.");
     }

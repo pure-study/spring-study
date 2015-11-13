@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = TestConfiguration.class)
+@SpringApplicationConfiguration(classes = EmbeddedDatabaseConfiguration.class)
 @Transactional
 public class FirstH2DaoIT {
     @Autowired
@@ -19,9 +19,7 @@ public class FirstH2DaoIT {
 
     @Ignore("Not ready")
     @Test
-    public void testCreateTableAndInsert() {
-        firstH2Dao.createTable();
-
+    public void testInsert() {
         firstH2Dao.insert();
         
         assertNotNull("No exceptions here.");

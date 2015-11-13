@@ -16,12 +16,12 @@ public class FirstH2Dao implements IFirstH2Dao {
     }
     
     @Override
-    public void createTable() {
-        jdbcTemplate.execute(String.format("create table %s(id int primary key, name varchar(255))", tableName));
+    public void insert() {
+        jdbcTemplate.update(String.format("insert into %s(id, name) values(1, 'name001')", tableName));
     }
     
     @Override
-    public void insert() {
-        jdbcTemplate.update(String.format("insert into %s(id, name) values(1, 'name001')", tableName));
+    public void minorOperationOnDb() {
+        jdbcTemplate.execute(String.format("select * from %s", tableName));
     }
 }
