@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
     }
 }
 
@@ -14,7 +14,6 @@ apply plugin: 'spring-boot'
 apply plugin: 'jacoco'
 
 jar {
-    baseName = 'gs-spring-boot'
     version =  '0.1.0'
 }
 
@@ -50,5 +49,5 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+    gradleVersion = '4.1'
 }
