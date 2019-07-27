@@ -1,0 +1,9 @@
+server:
+  port: 9090
+
+hello:
+  msg: Hello YAML! ${random.port.num}
+
+random:
+  port:
+    num: ${random.int[1024,9999]}
