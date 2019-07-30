@@ -3,11 +3,14 @@ package net.will.sbgradlestudy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
+
 @SpringBootApplication
-public class SpringbootGradleStudyApplication {
+@EnableAdminServer
+public class SpringBootAdminApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootGradleStudyApplication.class, args);
+		SpringApplication.run(SpringBootAdminApplication.class, args);
 	}
 
 }

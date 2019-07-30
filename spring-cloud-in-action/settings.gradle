@@ -11,4 +11,8 @@ pluginManagement {
 		}
 	}
 }
-rootProject.name = 'springboot-gradle-study'
+
+rootProject.name = 'spring-cloud-in-action'
+
+include "springboot-helloworld"
+include "springboot-admin"

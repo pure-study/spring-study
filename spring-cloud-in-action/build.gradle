@@ -1,0 +1,16 @@
+plugins {
+    id 'idea'
+}
+
+group = 'net.will'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+wrapper {
+    gradleVersion = '5.4.1'
+}
