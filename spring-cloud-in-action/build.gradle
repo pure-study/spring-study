@@ -14,3 +14,12 @@ repositories {
 wrapper {
     gradleVersion = '5.4.1'
 }
+
+subprojects {
+    repositories {
+       mavenLocal()
+       mavenLocal()
+       mavenCentral()
+       maven { url 'https://repo.spring.io/milestone' }
+    }
+}
