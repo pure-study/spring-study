@@ -1,23 +1,5 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.6.RELEASE'
-    id 'java'
-    id "io.spring.dependency-management" version "1.0.8.RELEASE"
-}
-
-group = 'net.will'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
 dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-    implementation "de.codecentric:spring-boot-admin-starter-server:${springBootAdminVersion}"
-    implementation "de.codecentric:spring-boot-admin-server-ui:${springBootAdminVersion}"
-
-    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
-    }
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "de.codecentric:spring-boot-admin-starter-server"
+    implementation "de.codecentric:spring-boot-admin-server-ui"
 }
