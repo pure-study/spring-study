@@ -1,26 +1,23 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.0.M4'
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
+    id "io.spring.dependency-management" version "1.0.8.RELEASE"
 }
-
-apply plugin: 'io.spring.dependency-management'
 
 group = 'net.will'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'de.codecentric:spring-boot-admin-starter-server:2.1.6'
-    implementation 'de.codecentric:spring-boot-admin-server-ui:2.1.6'
-    
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        exclude group: 'junit', module: 'junit'
-    }
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    implementation "de.codecentric:spring-boot-admin-starter-server:${springBootAdminVersion}"
+    implementation "de.codecentric:spring-boot-admin-server-ui:${springBootAdminVersion}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
-test {
-    useJUnitPlatform()
+dependencyManagement {
+    imports {
+        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+    }
 }
