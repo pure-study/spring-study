@@ -3,4 +3,5 @@ rootProject.name = 'spring-cloud-in-action'
 include "springboot-helloworld"
 include "springboot-admin"
 include "springboot-amqp:rabbit-mq-hello"
-include "springboot-amqp:rabbit-mq-direct"
+include "springboot-amqp:rabbit-mq-direct:log-handler-provider"
+include "springboot-amqp:rabbit-mq-direct:log-handler-consumer"
