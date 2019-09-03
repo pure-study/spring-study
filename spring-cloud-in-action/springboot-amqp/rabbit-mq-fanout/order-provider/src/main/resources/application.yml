@@ -1,6 +1,6 @@
 spring:
   application:
-    name: log-handler-provider
+    name: order-provider-fanout
 
   rabbitmq:
     host: 127.0.0.1
@@ -14,4 +14,4 @@ server:
 mq:
   config:
     exchange:
-      name: log.direct   # exchange name
+      name: order.fanout   # exchange name

@@ -8,19 +8,15 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-public class Sender {
+public class OrderSender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
     
     @Value("${mq.config.exchange.name}")
     private String exchange;
     
-    public void sendInfoLog() {
-        sendLogWithRoutingKey("log.info.routing.key");
-    }
-    
-    public void sendLogWithRoutingKey(String routingKey) {
+    public void send() {
         String msg = "hello " + new Date();
-        this.rabbitTemplate.convertAndSend(this.exchange, routingKey, msg);
+        this.rabbitTemplate.convertAndSend(this.exchange, "", msg);
     }
 }

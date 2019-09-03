@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: order-consumer-fanout
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: will
+    password: will1234
+
+server:
+  port: 9003
+
+mq:
+  config:
+    exchange:
+      name: order.fanout   # exchange name
+    queue:
+      sms:
+        name: order.sms
+      push:
+        name: order.push
+      lucky:
+        name: order.lucky

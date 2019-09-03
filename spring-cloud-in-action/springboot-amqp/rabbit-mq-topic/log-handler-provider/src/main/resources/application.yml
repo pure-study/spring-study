@@ -14,4 +14,4 @@ server:
 mq:
   config:
     exchange:
-      name: log.direct   # exchange name
+      name: log.topic   # exchange name
