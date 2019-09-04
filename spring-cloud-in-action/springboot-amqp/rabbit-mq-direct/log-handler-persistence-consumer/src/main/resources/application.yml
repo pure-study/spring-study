@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: log-handler-consumer
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: will
+    password: will1234
+
+server:
+  port: 9003
+
+mq:
+  config:
+    exchange:
+      name: log.direct   # exchange name
+    queue:
+      info:
+        name: log.info   # queue name
+        routing:
+          key: log.info.routing.key

@@ -9,3 +9,8 @@ include "springboot-amqp:rabbit-mq-topic:log-handler-provider"
 include "springboot-amqp:rabbit-mq-topic:log-handler-consumer"
 include "springboot-amqp:rabbit-mq-fanout:order-provider"
 include "springboot-amqp:rabbit-mq-fanout:order-consumer"
+
+include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-provider"
+include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-consumer"
+include "springboot-amqp:rabbit-mq-direct:log-handler-ack-provider"
+include "springboot-amqp:rabbit-mq-direct:log-handler-ack-consumer"

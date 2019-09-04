@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: log-handler-consumer
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: will
+    password: will1234
+
+    listener:
+      type: simple
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 5
+
+server:
+  port: 9003
+
+mq:
+  config:
+    exchange:
+      name: exceptional.log.direct   # exchange name
+    queue:
+      info:
+        name: exceptional.log.info   # queue name
+        routing:
+          key: exceptional.log.info.routing.key
