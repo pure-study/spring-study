@@ -14,3 +14,5 @@ include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-provider"
 include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-consumer"
 include "springboot-amqp:rabbit-mq-direct:log-handler-ack-provider"
 include "springboot-amqp:rabbit-mq-direct:log-handler-ack-consumer"
+
+include "eureka:eureka-server"
