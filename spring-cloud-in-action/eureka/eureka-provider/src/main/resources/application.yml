@@ -10,3 +10,11 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
 
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
