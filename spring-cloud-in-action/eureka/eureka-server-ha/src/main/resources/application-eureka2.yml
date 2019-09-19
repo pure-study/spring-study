@@ -1,6 +1,10 @@
 spring:
   application:
     name: eureka-server
+  security:
+    user:
+      name: user
+      password: 123456
 
 server:
   port: 8761
@@ -10,7 +14,7 @@ eureka:
     hostname: eureka2
   client:
     serviceUrl:
-      defaultZone: http://eureka1:8761/eureka/
-  server:
-    enableSelfPreservation: false
-    eviction-interval-timer-in-ms: 60000
+      defaultZone: http://user:123456@eureka1:8761/eureka/
+#  server:
+#    enableSelfPreservation: false
+#    eviction-interval-timer-in-ms: 60000
