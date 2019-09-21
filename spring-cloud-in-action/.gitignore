@@ -6,6 +6,7 @@ build/
 !**/src/test/**
 
 logs/
+output-hello/
 
 ### STS ###
 .apt_generated

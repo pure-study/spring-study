@@ -29,6 +29,19 @@ spring:
 server:
   port: 9090
 
+logging:
+  level:
+    net:
+      will:
+        sbgradlestudy: trace
+#  path: output-hello/logs/
+  file: logs/springboot-helloworld.log
+  pattern:
+    # the pattern to console
+    console: "%d{yyyy-MM-dd} [%thread] %-5level %logger{50} - %msg%n"
+    # the pattern to log file
+    file: "%d{yyyy-MM-dd} === [%thread] == %-5level == %logger{50} == %msg%n"
+
 ---
 spring:
   profiles: test
