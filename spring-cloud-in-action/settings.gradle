@@ -2,19 +2,21 @@ rootProject.name = 'spring-cloud-in-action'
 
 include "springboot-helloworld"
 include "springboot-admin"
+
 include "springboot-amqp:rabbit-mq-hello"
-include "springboot-amqp:rabbit-mq-direct:log-handler-provider"
-include "springboot-amqp:rabbit-mq-direct:log-handler-consumer"
 include "springboot-amqp:rabbit-mq-topic:log-handler-provider"
 include "springboot-amqp:rabbit-mq-topic:log-handler-consumer"
 include "springboot-amqp:rabbit-mq-fanout:order-provider"
 include "springboot-amqp:rabbit-mq-fanout:order-consumer"
 
+include "springboot-amqp:rabbit-mq-direct:log-handler-provider"
+include "springboot-amqp:rabbit-mq-direct:log-handler-consumer"
 include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-provider"
 include "springboot-amqp:rabbit-mq-direct:log-handler-persistence-consumer"
 include "springboot-amqp:rabbit-mq-direct:log-handler-ack-provider"
 include "springboot-amqp:rabbit-mq-direct:log-handler-ack-consumer"
 
+//include "eureka"  // can be omitted to include the properties in /eureka/gradle.properties
 include "eureka:eureka-server"
 include "eureka:eureka-server-ha"
 include "eureka:eureka-provider"

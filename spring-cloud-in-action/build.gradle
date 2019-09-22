@@ -37,9 +37,9 @@ subprojects {
     sourceCompatibility = '1.8'
 
     repositories {
-       mavenLocal()
-       mavenCentral()
-       maven { url 'https://repo.spring.io/milestone' }
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
     }
 
     dependencyManagement {
