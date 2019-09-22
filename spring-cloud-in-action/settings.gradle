@@ -23,3 +23,6 @@ include "eureka:eureka-provider"
 include "eureka:eureka-consumer"
 include "eureka:eureka-consumer-loadbalancer"
 include "eureka:eureka-consumer-no-eureka"
+
+include "e-book:e-book-product:e-book-product-api"
+include "e-book:e-book-product:e-book-product-core"
