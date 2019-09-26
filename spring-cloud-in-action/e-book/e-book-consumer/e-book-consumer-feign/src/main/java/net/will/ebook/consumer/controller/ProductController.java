@@ -1,23 +1,23 @@
-package net.will.ebook.product.facade;
+package net.will.ebook.consumer.controller;
 
+import net.will.ebook.consumer.service.ProductService;
 import net.will.ebook.product.domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class ProductFacadeImpl implements ProductFacade {
+@RequestMapping(value = "/productConsumer")
+public class ProductController {
+    @Autowired
+    private ProductService productService;
     
-    @Override
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public List<Product> listProduct() {
-        List<Product> list = new ArrayList<>();
-        list.add(new Product(1, "The first eBook Product"));
-        list.add(new Product(2, "The second eBook Product"));
-        list.add(new Product(3, "The third eBook Product"));
+        List<Product> list = productService.listProduct();
         return list;
     }
     

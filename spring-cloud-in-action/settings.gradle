@@ -26,3 +26,4 @@ include "eureka:eureka-consumer-no-eureka"
 
 include "e-book:e-book-product:e-book-product-api"
 include "e-book:e-book-product:e-book-product-core"
+include "e-book:e-book-consumer:e-book-consumer-feign"
