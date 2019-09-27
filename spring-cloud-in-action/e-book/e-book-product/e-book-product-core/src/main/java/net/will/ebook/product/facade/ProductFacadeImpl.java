@@ -27,6 +27,11 @@ public class ProductFacadeImpl implements ProductFacade {
     }
     
     @Override
+    public Product getProductByObject(Product obj) {
+        return obj;
+    }
+    
+    @Override
     public Product getProductComplex(Integer id, String name) {
         return new Product(id, name);
     }
