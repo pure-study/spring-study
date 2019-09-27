@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: e-book-consumer
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
