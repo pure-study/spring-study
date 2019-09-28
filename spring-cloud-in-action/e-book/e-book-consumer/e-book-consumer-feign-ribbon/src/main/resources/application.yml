@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: e-book-consumer
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+
+# Global settings for Ribbon
+#ribbon:
+#  ConnectTimeout: 3000
+#  ReadTimeout: 3000
+
+# Specific provider settings for Ribbon
+e-book-provider:
+  ribbon:
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 2
+    MaxAutoRetriesNextServer: 0
+    ConnectTimeout: 4000
+    ReadTimeout: 4000

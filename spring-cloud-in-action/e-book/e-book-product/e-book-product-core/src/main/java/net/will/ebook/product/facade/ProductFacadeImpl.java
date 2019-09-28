@@ -2,18 +2,25 @@ package net.will.ebook.product.facade;
 
 import net.will.ebook.product.domain.Product;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.concurrent.TimeUnit;
 
 @RestController
 public class ProductFacadeImpl implements ProductFacade {
     
     @Override
     public List<Product> listProduct() {
+        System.out.println("Coming into ProductFacadeImpl.listProduct()...");
+//        try {
+//            // for timeout tests
+//            TimeUnit.SECONDS.sleep(5);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    
         List<Product> list = new ArrayList<>();
         list.add(new Product(1, "The first eBook Product"));
         list.add(new Product(2, "The second eBook Product"));
