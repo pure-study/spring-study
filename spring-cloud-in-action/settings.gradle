@@ -32,3 +32,5 @@ include "e-book:e-book-consumer:e-book-consumer-feign-gzip"
 include "e-book:e-book-consumer:e-book-consumer-feign-httpclient"
 include "e-book:e-book-consumer:e-book-consumer-feign-log"
 include "e-book:e-book-consumer:e-book-consumer-feign-ribbon"
+
+include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-ribbon-fallback"

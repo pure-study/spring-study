@@ -9,4 +9,6 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-
+  server:
+    enableSelfPreservation: false
+    eviction-interval-timer-in-ms: 30000
