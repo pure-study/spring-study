@@ -20,8 +20,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
     
-    @RequestMapping(value = "list", method = RequestMethod.GET)
-    public void getProduct() throws ExecutionException, InterruptedException {
+    @RequestMapping(value = "testList", method = RequestMethod.GET)
+    public void testList() throws ExecutionException, InterruptedException {
         Future<Product> p1 = productService.getProduct(1);
         Future<Product> p2 = productService.getProduct(2);
         Future<Product> p3 = productService.getProduct(3);
