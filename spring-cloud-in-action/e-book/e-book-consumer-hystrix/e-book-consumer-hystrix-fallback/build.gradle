@@ -1,8 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+
+    api project(':e-book:e-book-product:e-book-product-api')
 }
 
 dependencyManagement {
