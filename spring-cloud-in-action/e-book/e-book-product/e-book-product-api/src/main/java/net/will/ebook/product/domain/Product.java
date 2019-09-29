@@ -29,4 +29,9 @@ public class Product implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("Product[id=%s, name=%s]", id, name);
+    }
 }
