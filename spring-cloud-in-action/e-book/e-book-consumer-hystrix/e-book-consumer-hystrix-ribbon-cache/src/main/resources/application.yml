@@ -6,7 +6,7 @@ spring:
     database: 1
     host: redis-server
     port: 6379
-    password: pwd
+    password: r8dis1234
     pool:
       max-active: 100
       max-wait: 3000

@@ -1,6 +1,9 @@
 package net.will.ebook.product.domain;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
+    private static final long serialVersionUID = -2822760883078212752L;
     private int id;
     private String name;
     
