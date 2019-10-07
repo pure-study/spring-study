@@ -1,4 +1,4 @@
-package net.will.ebook.consumer;
+package net.will.hystrix;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,10 +12,10 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 @SpringBootApplication
 @EnableHystrix
 @EnableHystrixDashboard
-public class EBookConsumerApplication {
+public class HystrixDashboardApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(EBookConsumerApplication.class, args);
+        SpringApplication.run(HystrixDashboardApplication.class, args);
     }
     
 }

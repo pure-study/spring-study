@@ -1,9 +1,9 @@
 spring:
   application:
-    name: e-book-consumer-hystrix
+    name: e-book-hystrix-dashboard
 
 server:
-  port: 8086
+  port: 1001
 
 eureka:
   client:

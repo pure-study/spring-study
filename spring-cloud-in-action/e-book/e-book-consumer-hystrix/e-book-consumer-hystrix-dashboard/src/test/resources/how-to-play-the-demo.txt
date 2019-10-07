@@ -1,0 +1,5 @@
+[https://stackoverflow.com/questions/48431547/how-to-enable-hystrix-stream-in-spring-boot-2-0]
+- Add @EnableCircuitBreaker or @EnableHystrix annotation with @EnableHystrixDashboard.
+- Add management.endpoints.web.exposure.include=* in application.properties.
+- Hystrix dashboard can be accessible at http://localhost:8080/hystrix.
+- Enter http://localhost:8080/actuator/hystrix.stream in Hystrix stream URL input.
