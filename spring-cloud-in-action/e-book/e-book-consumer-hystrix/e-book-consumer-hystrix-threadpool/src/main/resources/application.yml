@@ -1,9 +1,9 @@
 spring:
   application:
-    name: e-book-consumer-hystrix
+    name: e-book-consumer-hystrix-threadpool
 
 server:
-  port: 8086
+  port: 8087
 
 eureka:
   client:

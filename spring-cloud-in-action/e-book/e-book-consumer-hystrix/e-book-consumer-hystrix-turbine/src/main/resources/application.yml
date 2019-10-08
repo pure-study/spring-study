@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: e-book-hystrix-turbine
+
+server:
+  port: 1002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+turbine:
+  appConfig: e-book-consumer-hystrix-threadpool, e-book-consumer-hystrix-feign-fallback
+#  aggregator:
+#    clusterConfig: default
+#    clusterConfig: E-BOOK-CONSUMER-HYSTRIX-THREADPOOL, E-BOOK-CONSUMER-HYSTRIX-FEIGN-FALLBACK
+#  clusterNameExpression: default

@@ -1,9 +1,15 @@
 spring:
   application:
-    name: e-book-consumer
+    name: e-book-consumer-hystrix-feign-fallback
 
 server:
   port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 eureka:
   client:
