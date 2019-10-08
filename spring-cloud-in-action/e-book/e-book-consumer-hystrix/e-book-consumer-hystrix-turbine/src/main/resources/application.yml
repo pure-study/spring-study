@@ -18,7 +18,7 @@ management:
 
 turbine:
   appConfig: e-book-consumer-hystrix-threadpool, e-book-consumer-hystrix-feign-fallback
-#  aggregator:
-#    clusterConfig: default
+  aggregator:
+    clusterConfig: default
 #    clusterConfig: E-BOOK-CONSUMER-HYSTRIX-THREADPOOL, E-BOOK-CONSUMER-HYSTRIX-FEIGN-FALLBACK
-#  clusterNameExpression: default
+  clusterNameExpression: "'default'"
