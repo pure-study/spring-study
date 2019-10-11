@@ -1,6 +1,8 @@
 package net.will.ebook.product.facade;
 
 import net.will.ebook.product.domain.Product;
+import net.will.ebook.product.persistence.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,27 +12,22 @@ import java.util.List;
 
 @RestController
 public class ProductFacadeImpl implements ProductFacade {
+    @Autowired
+    private ProductMapper productMapper;
+    
+    public List<Product> findAllProducts() {
+        return this.productMapper.findAllProducts();
+    }
     
     @Override
     public List<Product> listProduct() {
         System.out.println("Coming into ProductFacadeImpl.listProduct()...");
-//        try {
-//            // for timeout tests
-//            TimeUnit.SECONDS.sleep(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-    
-        List<Product> list = new ArrayList<>();
-        list.add(new Product(1, "The first eBook Product"));
-        list.add(new Product(2, "The second eBook Product"));
-        list.add(new Product(3, "The third eBook Product"));
-        return list;
+        return this.productMapper.findAllProducts();
     }
     
     @Override
     public Product getProduct(Integer id) {
-        return new Product(id, "The second eBook Product");
+        return this.productMapper.selectByPrimaryKey(id);
     }
     
     @Override

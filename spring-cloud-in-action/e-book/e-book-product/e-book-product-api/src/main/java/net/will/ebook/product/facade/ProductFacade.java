@@ -15,6 +15,9 @@ public interface ProductFacade {
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public List<Product> listProduct();
     
+    @RequestMapping(value = "findAllProducts", method = RequestMethod.GET)
+    public List<Product> findAllProducts();
+    
     @RequestMapping(value = "get", method = RequestMethod.GET)
     public Product getProduct(@RequestParam("id") Integer id);
     
