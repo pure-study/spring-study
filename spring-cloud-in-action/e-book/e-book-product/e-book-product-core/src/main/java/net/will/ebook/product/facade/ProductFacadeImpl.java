@@ -1,33 +1,31 @@
 package net.will.ebook.product.facade;
 
 import net.will.ebook.product.domain.Product;
-import net.will.ebook.product.persistence.ProductMapper;
+import net.will.ebook.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
-//import java.util.concurrent.TimeUnit;
 
 @RestController
 public class ProductFacadeImpl implements ProductFacade {
     @Autowired
-    private ProductMapper productMapper;
+    private ProductService productService;
     
     public List<Product> findAllProducts() {
-        return this.productMapper.findAllProducts();
+        return this.productService.findAllProducts();
     }
     
     @Override
     public List<Product> listProduct() {
         System.out.println("Coming into ProductFacadeImpl.listProduct()...");
-        return this.productMapper.findAllProducts();
+        return this.productService.findAllProducts();
     }
     
     @Override
     public Product getProduct(Integer id) {
-        return this.productMapper.selectByPrimaryKey(id);
+        return this.productService.getProduct(id);
     }
     
     @Override

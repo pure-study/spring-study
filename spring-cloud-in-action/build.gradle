@@ -34,8 +34,10 @@ wrapper {
 }
 
 subprojects {
-    // or if ( !(project.name in ['e-book-product-api']) ) {...}
-    if (project.name != 'e-book-product-api') {
+    if ( !(project.name in [
+            'e-book-product-api',
+            'e-book-user-api'
+    ]) ) {
         apply plugin: "org.springframework.boot"
         apply plugin: "io.spring.dependency-management"
 
