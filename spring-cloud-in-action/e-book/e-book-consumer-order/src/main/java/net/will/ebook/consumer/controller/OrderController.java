@@ -66,7 +66,7 @@ public class OrderController {
         order.setDeleted((byte) 0);
         Integer id = this.orderService.createOrder(order);
         if (order.getId() == null && id != null) {
-            System.out.println("Setting back the order id...");
+            // Setting back the order id manually as it cannot be transferred back from service in this case...
             order.setId(id);
         }
         
