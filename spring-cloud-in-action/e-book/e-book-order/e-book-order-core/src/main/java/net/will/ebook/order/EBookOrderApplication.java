@@ -1,0 +1,17 @@
+package net.will.ebook.order;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@EnableEurekaClient
+@SpringBootApplication
+@MapperScan("net.will.ebook.order.persistence")
+public class EBookOrderApplication {
+    
+    public static void main(String[] args) {
+        SpringApplication.run(EBookOrderApplication.class, args);
+    }
+    
+}
