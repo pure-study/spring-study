@@ -26,12 +26,6 @@ include "eureka:eureka-consumer-no-eureka"
 
 include "e-book:e-book-product:e-book-product-api"
 include "e-book:e-book-product:e-book-product-core"
-include "e-book:e-book-user:e-book-user-api"
-include "e-book:e-book-user:e-book-user-core"
-include "e-book:e-book-order:e-book-order-api"
-include "e-book:e-book-order:e-book-order-core"
-include "e-book:e-book-trade:e-book-trade-api"
-include "e-book:e-book-trade:e-book-trade-core"
 
 include "e-book:e-book-consumer:e-book-consumer-feign"
 include "e-book:e-book-consumer:e-book-consumer-feign-param"
@@ -52,6 +46,3 @@ include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-dashboard"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-turbine"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-threadpool-mq"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-turbine-mq"
-
-include 'e-book:e-book-consumer-order'
-

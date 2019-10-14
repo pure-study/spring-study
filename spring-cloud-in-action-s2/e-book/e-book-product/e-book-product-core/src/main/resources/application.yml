@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: e-book-product
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://127.0.0.1:3306/book-product?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull"
+    username: will
+    password: test1234
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+mybatis:
+  type-aliases-package: net.will.ebook.product.domain
+  mapper-locations: "classpath:/mybatis/net/will/ebook/product/*.xml"
