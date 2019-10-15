@@ -13,3 +13,5 @@ include "e-book:e-book-trade:e-book-trade-api"
 include "e-book:e-book-trade:e-book-trade-core"
 
 include 'e-book:e-book-consumer-order'
+
+include 'e-book:zuul:zuul-gateway'
