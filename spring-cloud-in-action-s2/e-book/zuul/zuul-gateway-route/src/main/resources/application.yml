@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: e-book-zuul-gateway
+
+server:
+  port: 9010
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+# 1. URL matching
+#zuul:
+#  routes:
+#    book-product:
+#      path: "/book-product/**"
+#      url: "http://127.0.0.1:8083/"
+
+# 2. Service name matching
+zuul:
+  routes:
+#    book-product:
+#      path: "/book-product/**"
+#      serviceId: "e-book-product"
+# or:
+    e-book-product:
+      path: /book-product/**
+
+# 3. Excluding services
+#zuul:
+# case 1, use ',' to separate multiple services
+#  ignoredServices: e-book-product
+# case 2, exclude all except for several ones
+#  ignoredServices: '*'
+#  routes:
+#    e-book-user:
+#      path: /book-consumer/**
+# case 3, exclude by key words in path
+#  ignoredPatterns: /**/list/**
+#  routes:
+#    e-book-product:
+#      path: /book-product/**
+
+# 4. Adding prefix
+#zuul:
+#  prefix: /api
+#  routes:
+#    e-book-product:
+#      path: /book-product/**
