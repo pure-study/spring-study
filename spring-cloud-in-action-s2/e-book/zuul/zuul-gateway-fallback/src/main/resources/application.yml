@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: e-book-zuul-gateway
+  redis:
+    database: 1
+    host: redis-server
+    port: 6379
+    password: r8dis1234
+
+server:
+  port: 9010
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+# service specific settings
+#zuul:
+#  routes:
+#    e-book-product:
+#      path: /book-product/**
+#  ratelimit:
+#    enabled: true
+#    repository: REDIS
+#    policy-list:
+#      e-book-product:
+#        - limit: 3
+#          refresh-interval: 60
+#          type: origin
+
+# global settings
+zuul:
+  ratelimit:
+    enabled: true
+    repository: REDIS
+    default-policy-list:
+      - limit: 3
+        refresh-interval: 60
+        type: origin
