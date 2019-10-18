@@ -46,3 +46,5 @@ include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-dashboard"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-turbine"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-threadpool-mq"
 include "e-book:e-book-consumer-hystrix:e-book-consumer-hystrix-turbine-mq"
+
+include "sprintboot-2019:springboot-async"
