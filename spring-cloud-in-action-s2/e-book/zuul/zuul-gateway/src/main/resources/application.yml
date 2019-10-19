@@ -16,3 +16,15 @@ eureka:
     serviceUrl:
 #      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
       defaultZone: http://127.0.0.1:8761/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 8000
+
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000

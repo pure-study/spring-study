@@ -20,6 +20,11 @@ public class ProductFacadeImpl implements ProductFacade {
     @Override
     public List<Product> listProduct() {
         System.out.println("Coming into ProductFacadeImpl.listProduct()...");
+        /*try { // test this for Zuul gateway timeout
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         return this.productService.findAllProducts();
     }
     
