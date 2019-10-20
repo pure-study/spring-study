@@ -20,3 +20,4 @@ include 'e-book:zuul:zuul-gateway-filter'
 include 'e-book:zuul:zuul-gateway-fallback'
 
 include 'e-book:config:config-server'
+include 'e-book:config:config-client'
