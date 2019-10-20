@@ -3,6 +3,8 @@ rootProject.name = 'spring-cloud-in-action-s2'
 include "eureka:eureka-server-single"
 include "eureka:eureka-server-ha"
 
+include 'e-book:commons'
+
 include "e-book:e-book-product:e-book-product-api"
 include "e-book:e-book-product:e-book-product-core"
 include "e-book:e-book-user:e-book-user-api"
@@ -21,3 +23,5 @@ include 'e-book:zuul:zuul-gateway-fallback'
 
 include 'e-book:config:config-server'
 include 'e-book:config:config-client'
+include 'e-book:config:config-server-encrypt-symmetric'
+include 'e-book:config:config-encrypt-symmetric-product-core'
