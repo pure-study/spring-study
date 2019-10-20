@@ -25,7 +25,7 @@ public class HttpClientUtil {
     public static void main(String[] args) {
         String url = "http://127.0.0.1:8888/encrypt";
         
-        String html = HttpClientUtil.doPostJson(url, "test1234");
+        String html = HttpClientUtil.doPostJson(url, "will");
         System.out.println(html);
     }
     

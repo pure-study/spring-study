@@ -1,0 +1,6 @@
+encrypt:
+  keyStore:
+    location: encrypt-info.keystore
+    alias: config-info
+    password: will1234
+    secret: will5678
