@@ -27,3 +27,6 @@ include 'e-book:config:config-server-encrypt-symmetric'
 include 'e-book:config:config-encrypt-symmetric-product-core'
 include 'e-book:config:config-server-encrypt-rsa'
 include 'e-book:config:config-encrypt-rsa-product-core'
+
+include 'e-book:config:config-client-bus'
+include 'e-book:config:config-client-bus2'
