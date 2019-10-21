@@ -1,0 +1,6 @@
+Send POST request to refresh the changes from the Git server:
+> http://127.0.0.1:8888/actuator/bus-refresh
+
+To refresh part of the cluster nodes:
+> http://127.0.0.1:8888/actuator/bus-refresh/config-client:9031
+> http://127.0.0.1:8888/actuator/bus-refresh/config-client:**

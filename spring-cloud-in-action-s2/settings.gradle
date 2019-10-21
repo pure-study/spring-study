@@ -30,3 +30,4 @@ include 'e-book:config:config-encrypt-rsa-product-core'
 
 include 'e-book:config:config-client-bus'
 include 'e-book:config:config-client-bus2'
+include 'e-book:config:config-server-bus'
