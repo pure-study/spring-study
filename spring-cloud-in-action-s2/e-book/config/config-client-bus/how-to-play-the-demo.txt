@@ -1,2 +1,2 @@
 Send POST request to refresh the changes from the Git server:
-http://127.0.0.1:9031/actuator/bus-refresh
+> http://127.0.0.1:9031/actuator/bus-refresh

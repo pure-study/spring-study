@@ -1,10 +1,10 @@
 Check the encryption status:
-http://127.0.0.1:8888/encrypt/status
+> http://127.0.0.1:8888/encrypt/status
 It returns:
-{"status": "OK"}
+> {"status": "OK"}
 
 
 POST:
-http://127.0.0.1:8888/encrypt
-http://127.0.0.1:8888/decrypt
+> http://127.0.0.1:8888/encrypt
+> http://127.0.0.1:8888/decrypt
 
