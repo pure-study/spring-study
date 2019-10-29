@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: stream-group-sender
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: will
+    password: test1234
+
+  cloud:
+    stream:
+      bindings:
+        outputProduct:
+          destination: exchangeProduct
+          producer:
+            partitionKeyExpression: payload
+            partitionCount: 2
+
+server:
+  port: 9043
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+

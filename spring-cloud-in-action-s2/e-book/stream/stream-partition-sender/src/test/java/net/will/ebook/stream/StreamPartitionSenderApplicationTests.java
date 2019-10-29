@@ -10,8 +10,8 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = StreamGroupSenderApplication.class)
-public class StreamGroupSenderApplicationTests {
+@SpringBootTest(classes = StreamPartitionSenderApplication.class)
+public class StreamPartitionSenderApplicationTests {
     
     @Autowired
     private ISenderService senderService;
@@ -21,8 +21,6 @@ public class StreamGroupSenderApplicationTests {
         Product obj = new Product();
         obj.setId(100);
         obj.setName("Spring Cloud");
-//        Message message = MessageBuilder.withPayload(obj).build();
-//        this.senderService.send().send(message);
         for (int i = 0; i < 10; i++) {
             Message message = MessageBuilder.withPayload(obj).build();
             this.senderService.send().send(message);
