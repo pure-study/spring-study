@@ -41,3 +41,7 @@ include 'e-book:stream:stream-group-sender'
 include 'e-book:stream:stream-partition-receiver'
 include 'e-book:stream:stream-partition-receiver2'
 include 'e-book:stream:stream-partition-sender'
+
+include 'e-book:sleuth:sleuth-consumer'
+include "e-book:sleuth:sleuth-provider:sleuth-product-api"
+include "e-book:sleuth:sleuth-provider:sleuth-product-core"
