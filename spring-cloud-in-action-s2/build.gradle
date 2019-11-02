@@ -41,6 +41,7 @@ subprojects {
             'e-book-order-api',
             'e-book-trade-api',
             'sleuth-product-api',
+            'sleuth-elk-product-api',
             'commons'
     ]) ) {
         apply plugin: "org.springframework.boot"

@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+    
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    implementation "net.logstash.logback:logstash-logback-encoder:6.2"
+
+    api project(':e-book:sleuth:sleuth-elk-provider:sleuth-elk-product-api')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

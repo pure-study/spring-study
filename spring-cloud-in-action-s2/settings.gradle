@@ -45,3 +45,6 @@ include 'e-book:stream:stream-partition-sender'
 include 'e-book:sleuth:sleuth-consumer'
 include "e-book:sleuth:sleuth-provider:sleuth-product-api"
 include "e-book:sleuth:sleuth-provider:sleuth-product-core"
+include 'e-book:sleuth:sleuth-elk-consumer'
+include "e-book:sleuth:sleuth-elk-provider:sleuth-elk-product-api"
+include "e-book:sleuth:sleuth-elk-provider:sleuth-elk-product-core"
