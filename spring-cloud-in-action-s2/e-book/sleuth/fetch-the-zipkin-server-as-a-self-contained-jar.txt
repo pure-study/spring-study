@@ -1,0 +1,8 @@
+[https://github.com/openzipkin/zipkin]
+[https://github.com/openzipkin/zipkin/tree/master/zipkin-server]
+The quickest way to get started is to fetch the latest released server as a self-contained executable jar. Note that the Zipkin server requires minimum JRE 8. For example:
+
+$ curl -sSL https://zipkin.io/quickstart.sh | bash -s
+$ java -jar zipkin.jar
+
+Once you've started, browse to http://your_host:9411 to find traces!
