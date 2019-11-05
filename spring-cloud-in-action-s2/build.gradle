@@ -43,6 +43,7 @@ subprojects {
             'sleuth-product-api',
             'sleuth-elk-product-api',
             'sleuth-zipkin-product-api',
+            'sleuth-zipkin-mq-product-api',
             'commons'
     ]) ) {
         apply plugin: "org.springframework.boot"

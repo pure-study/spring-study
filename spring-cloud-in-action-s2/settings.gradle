@@ -52,3 +52,6 @@ include "e-book:sleuth:sleuth-elk-provider:sleuth-elk-product-core"
 include 'e-book:sleuth:sleuth-zipkin-consumer'
 include "e-book:sleuth:sleuth-zipkin-provider:sleuth-zipkin-product-api"
 include "e-book:sleuth:sleuth-zipkin-provider:sleuth-zipkin-product-core"
+include 'e-book:sleuth:sleuth-zipkin-mq-consumer'
+include "e-book:sleuth:sleuth-zipkin-mq-provider:sleuth-zipkin-mq-product-api"
+include "e-book:sleuth:sleuth-zipkin-mq-provider:sleuth-zipkin-mq-product-core"

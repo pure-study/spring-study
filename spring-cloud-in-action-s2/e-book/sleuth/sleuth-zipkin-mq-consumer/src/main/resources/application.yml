@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: sleuth-consumer
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: will
+    password: test1234
+  sleuth:    sampler:      probability: 1.0
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://eureka1:8761/eureka/, http://eureka2:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+ribbon:
+  MaxAutoRetries: 2
+  ConnectTimeout: 3000
+  ReadTimeout: 3000
