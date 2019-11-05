@@ -1,12 +1,16 @@
 spring:
   application:
-    name: sleuth-consumer
+    name: sleuth-zipkin-mq-consumer
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: will
     password: test1234
   sleuth:    sampler:      probability: 1.0
+  zipkin:
+    sender:
+# If rabbit is on the classpath this is automatically set
+      type: rabbit
 
 server:
   port: 8090

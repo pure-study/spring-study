@@ -9,4 +9,4 @@ Once you've started, browse to http://your_host:9411 to find traces!
 
 ----------
 Strat the server with RabbitMQ
-$ RABBIT_ADDRESSES=localhost java -jar zipkin-server-2.19.1-exec.jar -Dzipkin.collector.rabbitmq.uri=amqp://will:test1234@localhost:5672/
+$ RABBIT_ADDRESSES=localhost java -jar zipkin-server-2.19.1-exec.jar

@@ -8,6 +8,7 @@ dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
     
     implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
     implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
 
     api project(':e-book:sleuth:sleuth-zipkin-mq-provider:sleuth-zipkin-mq-product-api')
