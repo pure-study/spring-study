@@ -1,0 +1,6 @@
+rootProject.name = 'spring-cloud-docker-in-action'
+
+include "eureka:eureka-server-single"
+
+include "e-book:e-book-product:e-book-product-api"
+include "e-book:e-book-product:e-book-product-core"
