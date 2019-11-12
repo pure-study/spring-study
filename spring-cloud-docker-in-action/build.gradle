@@ -28,6 +28,10 @@ allprojects {
         mavenCentral()
         maven { url 'https://repo.spring.io/milestone' }
     }
+
+    test {
+        useJUnitPlatform()
+    }
 }
 
 wrapper {
