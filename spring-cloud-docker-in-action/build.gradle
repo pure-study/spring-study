@@ -32,6 +32,7 @@ allprojects {
 
 wrapper {
     gradleVersion = '5.6.2'
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 subprojects {
@@ -39,24 +40,15 @@ subprojects {
             'e-book-product-api',
             'e-book-user-api',
             'e-book-order-api',
-            'e-book-trade-api',
-            'sleuth-product-api',
-            'sleuth-elk-product-api',
-            'sleuth-zipkin-product-api',
-            'sleuth-zipkin-mq-product-api',
-            'commons'
+            'e-book-trade-api'
     ]) && project.subprojects.size() == 0 ) {
         apply plugin: "org.springframework.boot"
         apply plugin: "io.spring.dependency-management"
 
-        dependencyManagement {
-            imports {
-                mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
-            }
-        }
-
         dependencies {
-            testImplementation "org.springframework.boot:spring-boot-starter-test"
+            testImplementation("org.springframework.boot:spring-boot-starter-test") {
+                exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+            }
         }
     }
 }
