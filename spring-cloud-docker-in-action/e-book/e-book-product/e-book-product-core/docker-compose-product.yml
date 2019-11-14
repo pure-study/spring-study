@@ -1,0 +1,15 @@
+version: '3'
+services:
+  e-book-product:
+    container_name: e-book-product
+    image: registry-will:5000/e-book-product:0.0.1-SNAPSHOT
+    ports:
+      - "8083:8083"
+    privileged: true
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: willnet

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/volume/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Will1234"
+    privileged: true
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: willnet

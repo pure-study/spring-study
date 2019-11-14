@@ -10,3 +10,8 @@ services:
     privileged: true
     networks:
       - default
+
+networks:
+  default:
+    external:
+      name: willnet
