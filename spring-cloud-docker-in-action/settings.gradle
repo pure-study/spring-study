@@ -4,3 +4,11 @@ include "eureka:eureka-server-single"
 
 include "e-book:e-book-product:e-book-product-api"
 include "e-book:e-book-product:e-book-product-core"
+include "e-book:e-book-user:e-book-user-api"
+include "e-book:e-book-user:e-book-user-core"
+include "e-book:e-book-order:e-book-order-api"
+include "e-book:e-book-order:e-book-order-core"
+include "e-book:e-book-trade:e-book-trade-api"
+include "e-book:e-book-trade:e-book-trade-core"
+
+include 'e-book:e-book-consumer-order'

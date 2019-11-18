@@ -1,0 +1,43 @@
+version: '3'
+services:
+  product:
+    container_name: e-book-product
+    image: registry-will:5000/e-book-product:0.0.1-SNAPSHOT
+    ports:
+      - "8083:8083"
+    networks:
+      - default
+  user:
+    container_name: e-book-user
+    image: registry-will:5000/e-book-user:0.0.1-SNAPSHOT
+    ports:
+      - "8084:8084"
+    networks:
+      - default
+  order:
+    container_name: e-book-order
+    image: registry-will:5000/e-book-order:0.0.1-SNAPSHOT
+    ports:
+      - "8085:8085"
+    networks:
+      - default
+  trade:
+    container_name: e-book-trade
+    image: registry-will:5000/e-book-trade:0.0.1-SNAPSHOT
+    ports:
+      - "8086:8086"
+    networks:
+      - default
+  consumer:
+    container_name: e-book-consumer-order
+    image: registry-will:5000/e-book-consumer-order:0.0.1-SNAPSHOT
+    ports:
+      - "8090:8090"
+    networks:
+      - default
+    
+networks:
+  default:
+    external:
+      name: willnet
+      

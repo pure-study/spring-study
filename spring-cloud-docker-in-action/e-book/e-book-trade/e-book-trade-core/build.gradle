@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'com.bmuschko.docker-spring-boot-application' version '5.3.0'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0"
+    implementation "mysql:mysql-connector-java:${mysqlVersion}"
+
+    api project(':e-book:e-book-trade:e-book-trade-api')
+    api project(':e-book:e-book-order:e-book-order-api')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+docker {
+    springBootApplication {
+        baseImage = 'java:8'
+        ports = [8086]
+        tag = "registry-will:5000/e-book-trade:${project.version}"
+    }
+}

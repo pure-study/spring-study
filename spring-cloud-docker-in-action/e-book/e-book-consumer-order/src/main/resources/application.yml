@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: e-book-consumer-order
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+ribbon:
+  MaxAutoRetries: 2
+  ConnectTimeout: 3000
+  ReadTimeout: 3000
