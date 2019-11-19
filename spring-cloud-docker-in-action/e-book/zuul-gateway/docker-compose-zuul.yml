@@ -1,0 +1,16 @@
+version: '3'
+services:
+  zuul-gateway:
+    container_name: zuul-gateway
+    image: registry-will:5000/zuul-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "9010:9010"
+    privileged: true
+    
+    networks:
+      - default
+    
+networks:
+  default:
+    external:
+      name: willnet
