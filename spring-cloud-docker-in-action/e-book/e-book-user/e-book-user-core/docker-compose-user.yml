@@ -1,0 +1,14 @@
+version: '3'
+services:
+  e-book-product:
+    container_name: e-book-user
+    image: registry-will:5000/e-book-user:0.0.1-SNAPSHOT
+    ports:
+      - "8084:8084"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: willnet
