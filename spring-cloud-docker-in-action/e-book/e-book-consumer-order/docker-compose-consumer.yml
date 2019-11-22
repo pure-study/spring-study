@@ -1,0 +1,14 @@
+version: '3'
+services:
+  e-book-consumer-order:
+    container_name: e-book-consumer-order
+    image: registry-will:5000/e-book-consumer-order:0.0.1-SNAPSHOT
+    ports:
+      - "8090:8090"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: willnet
