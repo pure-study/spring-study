@@ -1,0 +1,16 @@
+version: '3'
+services:
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin:latest
+    ports:
+      - "9411:9411"
+    #environment:
+    #  MYSQL_ROOT_PASSWORD: "Will1234"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: willnet
