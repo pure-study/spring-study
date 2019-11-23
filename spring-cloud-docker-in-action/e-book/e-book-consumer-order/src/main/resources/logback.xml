@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name" />
+
+    <property name="LOG_FILE" value="${BUILD_FOLDER:-build}/${springAppName}" />
+
+    <property name="CONSOLE_LOG_PATTERN"
+        value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
         <encoder>
-            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
         </encoder>
     </appender>
 
-    <appender name="rollingFile"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>./logs/server.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>./logs/server.%d{yyyy-MM-dd}.%i.log
-            </fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    <appender name="logstash"
+        class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>logstash:9250</destination>
+        <encoder
+            class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <pattern>
+                    <pattern>
+                        {
+                        "severity": "%level",
+                        "service": "${springAppName:-}",
+                        "trace": "%X{X-B3-TraceId:-}",
+                        "span": "%X{X-B3-SpanId:-}",
+                        "exportable": "%X{X-Span-Export:-}",
+                        "pid": "${PID:-}",
+                        "thread": "%thread",
+                        "class": "%logger{40}",
+                        "rest": "%message"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
         </encoder>
     </appender>
 
-
-    <appender name="async-stdout" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="stdout"/>
-        <includeCallerData>true</includeCallerData>
-    </appender>
-    <appender name="async-rollingFile" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="rollingFile"/>
-        <includeCallerData>true</includeCallerData>
-    </appender>
-
-    <logger name="org.quartz.impl.jdbcjobstore.JobStoreTX" level="INFO"/>
-    <logger name="org.quartz.impl.jdbcjobstore.StdRowLockSemaphore" level="INFO"/>
-    <logger name="org.springframework.amqp.rabbit.core.RabbitTemplate" level="INFO"/>
-    <logger name="org.springframework.amqp.rabbit.listener.BlockingQueueConsumer" level="INFO"/>
-
-    <root level="INFO">
-        <appender-ref ref="async-stdout"/>
-        <appender-ref ref="async-rollingFile"/>
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+        <appender-ref ref="logstash" />
     </root>
 </configuration>
