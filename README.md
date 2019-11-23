@@ -5,3 +5,4 @@
 * Spring-cloud
 * H2 Database
 * JaCoCo
+* Docker
