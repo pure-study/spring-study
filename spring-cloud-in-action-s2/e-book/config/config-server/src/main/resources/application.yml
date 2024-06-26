@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: 'https://github.com/pure-study/config'
+          uri: 'https://github.com/will8ug/config'
           searchPaths: '{application}'
 #          username: username
 #          password: password
